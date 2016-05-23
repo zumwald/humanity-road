@@ -1,4 +1,5 @@
-#**HumanityRoad**
+# humanity-road
+Donated project to the HumanityRoad.org team.
 
 A web dashboard designed to allow volunteers at [HumanityRoad](http://humanityroad.org) to log and track their activity.
 
