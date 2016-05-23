@@ -1,0 +1,20 @@
+{
+  "name": "webapp",
+  "version": "0.9.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Zumwalt",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "~0.4.1",
+    "grunt-injector": "^0.6.1",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-wiredep": "^3.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.0.0"
+  }
+}

@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+<div>
+    <p class="md-headline">
+        Tell us about yourself...
+    </p>
+</div>
+<md-content layout-padding>
+    <div>
+        <form name="profileForm">
+            <p class="md-subhead">The basics</p>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>first name</label>
+                    <input ng-model="uCtrl.user.firstName"/>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>last name</label>
+                    <input ng-model="uCtrl.user.lastName"/>
+                </md-input-container>
+            </div>
+            <p class="md-caption">Birthday</p>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>month</label>
+                    <md-select ng-model="uCtrl.user.birthday.month">
+                        <md-option ng-repeat="month in uCtrl.months()" value="{{month}}">
+                            {{month}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>day</label>
+                    <md-select ng-model="uCtrl.user.birthday.day">
+                        <md-option ng-repeat="day in uCtrl.days()" value="{{day}}">
+                            {{day}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <p class="md-subhead">How can we contact you?</p>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>email</label>
+                    <input ng-model="uCtrl.user.primaryEmail" type="email"/>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Skype username</label>
+                    <input ng-model="uCtrl.user.skypeId"/>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Twitter handle</label>
+                    <input ng-model="uCtrl.user.twitterId"/>
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>phone number (primary)</label>
+                    <input ng-model="uCtrl.user.primaryPhone" type="tel"/>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>phone number (mobile)</label>
+                    <input ng-model="uCtrl.user.mobilePhone" type="tel" />
+                </md-input-container>
+            </div>
+        </form>
+    </div>
+</md-content>
