@@ -1,11 +1,9 @@
 ﻿using System.Configuration;
-using System.Globalization;
 using System.Security.Claims;
 using Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
-using Newtonsoft.Json.Linq;
 
 namespace WebApp
 {

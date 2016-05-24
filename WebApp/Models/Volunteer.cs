@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Security.Claims;
-using System.Security.Principal;
 
 namespace WebApp
 {
@@ -10,6 +8,7 @@ namespace WebApp
         // HumanityRoad info
         public string Team { get; set; }
         public string Employer { get; set; }
+        public Boolean EmployerOffersMatch { get; set; }
         public string State { get; set; }
         public DateTime? OrientationDate { get; set; }
         public DateTime? MediaOrientationDate { get; set; }

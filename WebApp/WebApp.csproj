@@ -208,10 +208,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605241642585_InitialCreate.cs" />
+    <Compile Include="Migrations\201605241642585_InitialCreate.Designer.cs">
+      <DependentUpon>201605241642585_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605241804113_includeEmployerMatchFlag.cs" />
+    <Compile Include="Migrations\201605241804113_includeEmployerMatchFlag.Designer.cs">
+      <DependentUpon>201605241804113_includeEmployerMatchFlag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\TimeSheet.cs" />
     <Compile Include="Models\Volunteer.cs" />
@@ -4510,6 +4520,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605241642585_InitialCreate.resx">
+      <DependentUpon>201605241642585_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605241804113_includeEmployerMatchFlag.resx">
+      <DependentUpon>201605241804113_includeEmployerMatchFlag.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

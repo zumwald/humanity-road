@@ -8,7 +8,7 @@ angular.module('frontEndApp')
             $log.log('getting user details');
             var deferred = $q.defer();
 
-            $http.get('/api/account')
+            $http.get('/api/volunteer')
                 .success(function (data) {
                     deferred.resolve(data);
                 })
@@ -20,5 +20,15 @@ angular.module('frontEndApp')
             return deferred.promise;
         };
 
+        self.saveUserDetails = function(userObj) {
+            $log.log('entered UserService.saveUserDetails');
+            $log.log('userObj:', userObj);
+
+            $http({
+                method: 'PUT',
+                url: '/api/volunteer/',
+                data: userObj
+            });
+        };
 
     }]);

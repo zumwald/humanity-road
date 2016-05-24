@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace WebApp
+namespace WebApp.Controllers
 {
     [Authorize]
     public class ErrorController : Controller

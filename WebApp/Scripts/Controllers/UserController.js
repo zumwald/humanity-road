@@ -17,12 +17,12 @@ angular.module('frontEndApp')
       self.user = {};
 
       UserService.getUserDetails().then(function (data) {
-          self.user.primaryEmail = data.primaryEmail;
-          self.user.firstName = data.firstName;
-          self.user.lastName = data.lastName;
-          self.user.id = data.id;
-          self.user.imageUri = data.imageUri;
+          self.user = data;
       });
+
+      self.saveUserInfo = function () {
+          UserService.saveUserDetails(self.user);
+      }
 
       // form helpers
       self.months = function () {
@@ -30,7 +30,26 @@ angular.module('frontEndApp')
       };
       self.days = function () {
           return _.range(1, 31 + 1);
-      }
+      };
+      self.languages = ['English', 'Spanish', 'French'];
+      self.transformChip = function (chip) {
+          // If it is an object, it's already a known chip
+          if (angular.isObject(chip)) {
+              return chip;
+          }
+          // Otherwise, create a new one
+          return { name: chip, type: 'new' }
+      };
+      function createFilterFor(query) {
+          var lowercaseQuery = angular.lowercase(query);
+          return function filterFn(language) {
+              return language.toLowerCase().indexOf(lowercaseQuery) >= 0;
+          };
+      };
+      self.querylanguageSearch = function (query) {
+          return query ? self.languages.filter(createFilterFor(query)) : [];
+      };
+
 
       $log.log('exiting UserCtrl');
   }]);

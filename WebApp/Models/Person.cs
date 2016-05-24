@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
-using System.Security.Principal;
 using WebApp.Utilities;
 
 namespace WebApp
@@ -15,6 +14,12 @@ namespace WebApp
             this.Languages = new List<string>();
             this.CreatedDate = DateTime.UtcNow;
             this.LastModifiedDate = DateTime.UtcNow;
+            this.Name_First = ClaimsPrincipal.Current.GetUserProperty(IdentityHelpers.PERSON_FIRSTNAME_K);
+            this.Name_Last = ClaimsPrincipal.Current.GetUserProperty(IdentityHelpers.PERSON_LASTNAME_K);
+            this.Email_Contact = ClaimsPrincipal.Current.GetUserProperty(IdentityHelpers.PERSON_PRIMARY_EMAIL_K);
+            this.Email_GoogleDocs = this.Email_Contact;
+            this.Email_Social = this.Email_Contact;
+            this.imageUri = ClaimsPrincipal.Current.GetUserProperty(IdentityHelpers.IMAGE_URI_K);
         }
 
         [Key]
@@ -48,5 +53,6 @@ namespace WebApp
 
         public DateTime LastModifiedDate { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string imageUri { get; set; }
     }
 }

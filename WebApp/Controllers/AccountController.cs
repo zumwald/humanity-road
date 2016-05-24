@@ -1,13 +1,9 @@
 ﻿using System.Security.Claims;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.OpenIdConnect;
-using Microsoft.Owin.Security;
 using WebApp.Utilities;
 
-namespace WebApp
+namespace WebApp.Controllers
 {
     [RequireHttps(Order = 0)]
     [System.Web.Mvc.Authorize(Order = 1)]

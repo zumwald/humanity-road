@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Web.Mvc;
-using WebApp.Utilities;
+﻿using System.Web.Mvc;
 
-namespace WebApp
+namespace WebApp.Controllers
 {
     [RequireHttps(Order = 0)]
     [Authorize(Order = 1)]
@@ -18,7 +14,6 @@ namespace WebApp
         [ActionName("signin-google")]
         public ActionResult SignInGoogle()
         {
-            Console.WriteLine("Google Signin.");
             return this.RedirectToAction("Index");
         }
 
