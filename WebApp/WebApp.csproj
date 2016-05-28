@@ -4517,6 +4517,7 @@
     <None Include="Properties\PublishProfiles\HumanityRoad - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\HumanityRoad - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\HumanityRoad - Web Deploy.pubxml" />
+    <Content Include="Views\App\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

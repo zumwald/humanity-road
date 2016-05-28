@@ -8,20 +8,26 @@
  * Controller of the frontEndApp
  */
 angular.module('frontEndApp')
-  .controller('UserCtrl', ['$log', 'UserService', function ($log, UserService) {
+  .controller('UserCtrl', ['$log', 'UserService', '$window', function ($log, UserService, $window) {
 
       $log.log('entered UserCtrl');
 
       var self = this;
 
       self.user = {};
+      self.timesheet = {};
+      self.showSpinner = false;
 
       UserService.getUserDetails().then(function (data) {
           self.user = data;
       });
 
       self.saveUserInfo = function () {
-          UserService.saveUserDetails(self.user);
+          UserService.saveUserDetails(self.user).then(function (res) {
+              self.showSpinner = false;
+              $window.location.href('#/Home');
+          });
+          self.showSpinner = true;
       }
 
       // form helpers

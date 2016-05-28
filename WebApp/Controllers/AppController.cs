@@ -23,6 +23,11 @@ namespace WebApp.Controllers
             return this.ResolveRouteToIndexIfNeeded() ?? this.View();
         }
 
+        public ActionResult Home()
+        {
+            return this.ResolveRouteToIndexIfNeeded() ?? this.View();
+        }
+
         private ActionResult ResolveRouteToIndexIfNeeded()
         {
             if (this.Request.Headers["X-Requested-By"] != "AngularClient")

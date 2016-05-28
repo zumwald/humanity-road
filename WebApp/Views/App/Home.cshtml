@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2 class="md-display-3">Activity Log</h2>
+
+<md-content layout-padding flex layout="column">
+    <h4 class="md-display-6">Log your recent activity</h4>
+    <div layout-gt-xs="row" layout="column" layout-align-xs="center center">
+        <md-input-container class="md-block" flex-gt-xs="10">
+            <label>hours</label>
+            <input ng-model="uCtrl.timesheet.Hours" type="number"/>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>description</label>
+            <input ng-model="uCtrl.timesheet.Description"/>
+        </md-input-container>
+        <md-datepicker class="md-block"
+                       ng-model="uCtrl.timesheet.Date"
+                       md-placeholder="Select the date"></md-datepicker>
+    </div>
+    <div layout="column" layout-align-gt-xs="center start" layout-align="center center">
+        <md-button class="md-raised md-primary">save</md-button>
+    </div>
+    
+    <span flex></span>
+</md-content>

@@ -24,11 +24,20 @@ angular.module('frontEndApp')
             $log.log('entered UserService.saveUserDetails');
             $log.log('userObj:', userObj);
 
+            var deferred = $q.defer();
+
             $http({
                 method: 'PUT',
                 url: '/api/volunteer/',
                 data: userObj
+            }).then(function(data) {
+                deferred.resolve(data);
+            }, function(msg, code) {
+                deferred.reject(msg);
+                $log.error('error in UserService.saveUserDetails: ', msg, code);
             });
+
+            return deferred.promise;
         };
 
     }]);

@@ -48,6 +48,9 @@ var routeConfig = function($routeProvider) {
         .when('/Profile/Edit', {
             templateUrl: 'app/profile-edit'
         })
+        .when('/Home', {
+            templateUrl: 'app/home'
+        })
         .otherwise('/Profile/Edit');
 };
 routeConfig.$inject = ['$routeProvider'];
