@@ -25,7 +25,7 @@ angular.module('frontEndApp')
       self.saveUserInfo = function () {
           UserService.saveUserDetails(self.user).then(function (res) {
               self.showSpinner = false;
-              $window.location.href('#/Home');
+              $window.location.href = '#/Home';
           });
           self.showSpinner = true;
       }
