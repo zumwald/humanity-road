@@ -23,42 +23,37 @@
           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- HEADER -->
-    <div class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand md-display3" href="#/">@ViewBag.Title</a>
-        </div>
-        <nav class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#/Home">Home</a>
-                </li>
-                <li>
-                    <a href="#/Profile/Edit">Profile</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <md-toolbar layout="row">
+        <md-button ng-click="uCtrl.toggleNav()">
+            <i class="fa fa-bars"></i>
+        </md-button>
+        <h3>@ViewBag.Title</h3>
+    </md-toolbar>
 
-    <md-content layout-fill layout="column">
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left"
+                    md-component-id="left"
+                    md-whiteframe="4"
+                    layout="column">
+            <md-button ng-click="uCtrl.hrefHandle('#/Home')">Home</md-button>
+            <md-button ng-click="uCtrl.hrefHandle('#/Profile/Edit')">Profile</md-button>
+        </md-sidenav>
+        <md-content layout-fill layout="column">
 
-        <!-- VIEW -->
-        <section flex ng-view layout="column" layout-padding>
-            @RenderBody()
-        </section>
+            <!-- VIEW -->
+            <section flex ng-view layout="column" layout-padding>
+                @RenderBody()
+            </section>
 
-        <!-- FOOTER -->
-        <div class="footer" layout="row" layout-align="space-around center" layout-padding>
-            <a href="mailto:daniel.zumwalt@outlook.com"><i class="fa fa-envelope"></i> send feedback</a>
-            <span flex></span>
-            <p title="@ViewBag.userName">Logged in as {{uCtrl.user.Name_First}} {{uCtrl.user.Name_Last}}</p>
-        </div>
-    </md-content>
+            <!-- FOOTER -->
+            <div class="footer" layout="row" layout-align="space-around center" layout-padding>
+                <a href="mailto:daniel.zumwalt@outlook.com"><i class="fa fa-envelope"></i> send feedback</a>
+                <span flex></span>
+                <p title="@ViewBag.userName">Logged in as {{uCtrl.user.Name_First}} {{uCtrl.user.Name_Last}}</p>
+            </div>
+        </md-content>
+    </section>
+
 
     <!-- bower:js -->
     <script src="../../bower_components/jquery/dist/jquery.js"></script>

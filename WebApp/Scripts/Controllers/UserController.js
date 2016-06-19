@@ -8,7 +8,7 @@
  * Controller of the frontEndApp
  */
 angular.module('frontEndApp')
-  .controller('UserCtrl', ['$log', 'UserService', '$window', function ($log, UserService, $window) {
+  .controller('UserCtrl', ['$log', 'UserService', '$window', '$mdSidenav', function ($log, UserService, $window, $mdSidenav) {
 
       $log.log('entered UserCtrl');
 
@@ -18,13 +18,21 @@ angular.module('frontEndApp')
       self.showSpinner = true;
 
       // function declarations
-
       self.saveUserInfo = function () {
           UserService.saveUserDetails(self.user).then(function (res) {
               self.showSpinner = false;
               $window.location.href = '#/Home';
           });
           self.showSpinner = true;
+      }
+
+      self.toggleNav = function() {
+          $mdSidenav('left').toggle();
+      }
+
+      self.hrefHandle = function(href) {
+          $mdSidenav('left').close();
+          $window.location.href = href;
       }
 
       // form helpers
