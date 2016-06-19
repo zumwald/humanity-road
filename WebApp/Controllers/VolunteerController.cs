@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -22,7 +23,7 @@ namespace WebApp.Controllers
         public IHttpActionResult Get()
         {
             var id = ClaimsPrincipal.Current.GetUserProperty(IdentityHelpers.PERSON_ID_K);
-            Volunteer volunteer = db.Volunteers.Find(id);
+            Volunteer volunteer = db.Volunteers.FirstOrDefault(v => v.Id.Equals(id, StringComparison.InvariantCulture));
             if (volunteer == null)
             {
                 // create the volunteer
