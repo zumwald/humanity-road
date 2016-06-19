@@ -8,7 +8,7 @@ namespace WebApp
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public Volunteer Volunteer { get; set; }
+        public string volunteerId { get; set; }
         public DateTime Date { get; set; }
         public int Hours { get; set; }
         
