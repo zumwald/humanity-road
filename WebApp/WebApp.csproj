@@ -208,6 +208,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\TimeSheetController.cs" />
     <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,6 +221,14 @@
     <Compile Include="Migrations\201605241804113_includeEmployerMatchFlag.cs" />
     <Compile Include="Migrations\201605241804113_includeEmployerMatchFlag.Designer.cs">
       <DependentUpon>201605241804113_includeEmployerMatchFlag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606190211428_updated TimeSheet model to only contain userId.cs" />
+    <Compile Include="Migrations\201606190211428_updated TimeSheet model to only contain userId.Designer.cs">
+      <DependentUpon>201606190211428_updated TimeSheet model to only contain userId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606190306038_depricating the offersMatch boolean flag for employer.cs" />
+    <Compile Include="Migrations\201606190306038_depricating the offersMatch boolean flag for employer.Designer.cs">
+      <DependentUpon>201606190306038_depricating the offersMatch boolean flag for employer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Person.cs" />
@@ -4528,6 +4537,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605241804113_includeEmployerMatchFlag.resx">
       <DependentUpon>201605241804113_includeEmployerMatchFlag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606190211428_updated TimeSheet model to only contain userId.resx">
+      <DependentUpon>201606190211428_updated TimeSheet model to only contain userId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606190306038_depricating the offersMatch boolean flag for employer.resx">
+      <DependentUpon>201606190306038_depricating the offersMatch boolean flag for employer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
