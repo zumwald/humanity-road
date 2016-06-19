@@ -5,26 +5,25 @@
 <div flex
      layout="row"
      layout-align="space-around center"
-     ng-show="uCtrl.showSpinner">
+     ng-if="uCtrl.showSpinner">
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
-<div ng-hide="uCtrl.showSpinner">
+
+<md-content layout-padding ng-if="!uCtrl.showSpinner">
     <p class="md-headline">
         Tell us about yourself!
     </p>
-</div>
-<md-content layout-padding ng-hide="uCtrl.showSpinner">
     <div>
         <p class="md-subhead">Let's start with the basics</p>
 
         <p class="md-caption">Name</p>
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>first name</label>
+                <label>First Name</label>
                 <input ng-model="uCtrl.user.Name_First" />
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
-                <label>last name</label>
+                <label>Last Name</label>
                 <input ng-model="uCtrl.user.Name_Last" />
             </md-input-container>
         </div>
@@ -32,7 +31,7 @@
         <p class="md-caption">Birthday</p>
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>month</label>
+                <label>Month</label>
                 <md-select ng-model="uCtrl.user.BirthMonth">
                     <md-option ng-repeat="month in uCtrl.months()" value="{{month}}">
                         {{month}}
@@ -40,7 +39,7 @@
                 </md-select>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
-                <label>day</label>
+                <label>Day</label>
                 <md-select ng-model="uCtrl.user.BirthDay">
                     <md-option ng-repeat="day in uCtrl.days()" value="{{day}}">
                         {{day}}
@@ -49,15 +48,72 @@
             </md-input-container>
         </div>
 
+        <p class="md-subhead">How can we contact you?</p>
+        <div layout-gt-xs="row">
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Primary Email</label>
+                <input ng-model="uCtrl.user.Email_Contact" type="email" />
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Skype ID</label>
+                <input ng-model="uCtrl.user.SkypeId" />
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Twitter ID</label>
+                <input ng-model="uCtrl.user.TwitterId" />
+            </md-input-container>
+        </div>
+        <div layout-gt-xs="row">
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Primary Phone</label>
+                <input ng-model="uCtrl.user.PhoneNumber_Primary" type="tel" />
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Mobile Phone</label>
+                <input ng-model="uCtrl.user.PhoneNumber_Mobile" type="tel" />
+                <div class="hint">Can we send you text (SMS) messages? If so, please enter a number where we can text you.</div>
+            </md-input-container>
+        </div>
+
+        <p class="md-subhead">Letting us know where you live allows us to contact you when something is happening near you</p>
+        <div>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Street Address</label>
+                <input ng-model="uCtrl.user.Street" />
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>City</label>
+                <input ng-model="uCtrl.user.City"/>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>State</label>
+                <input ng-model="uCtrl.user.StateProvince"/>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Zip Code</label>
+                <input ng-model="uCtrl.user.PostalCode"/>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Country</label>
+                <input ng-model="uCtrl.user.CountryRegion" />
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Country of Citizenship</label>
+                <input ng-model="uCtrl.user.CountryRegionOfCitizenship" />
+                <div class="hint">Occasionally, we have requests for project work that requires citizenship for that country.</div>
+            </md-input-container>
+        </div>
+
         <p class="md-caption">Employer Info</p>
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
-                <label>name</label>
+                <label>Employer Name</label>
                 <input ng-model="uCtrl.user.Employer" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs="20">
-                <label>offers match?</label>
-                <input ng-model="uCtrl.user.EmployerOffersMatch" type="checkbox" />
+                <div class="hint">Some employers match hours and donations - if you think your employer might have a program or want us to research it list your employer here and we will talk with you about it.</div>
             </md-input-container>
         </div>
 
@@ -79,61 +135,8 @@
             </md-chips>
         </div>
 
-        <p class="md-subhead">How can we contact you?</p>
-        <div layout-gt-xs="row">
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>primary</label>
-                <input ng-model="uCtrl.user.Email_Contact" type="email" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Skype username</label>
-                <input ng-model="uCtrl.user.SkypeId" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Twitter handle</label>
-                <input ng-model="uCtrl.user.TwitterId" />
-            </md-input-container>
-        </div>
-        <div layout-gt-xs="row">
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>phone number (primary)</label>
-                <input ng-model="uCtrl.user.PhoneNumber_Primary" type="tel" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>phone number (mobile)</label>
-                <input ng-model="uCtrl.user.PhoneNumber_Mobile" type="tel" />
-            </md-input-container>
-        </div>
-
-        <p class="md-subhead">Letting us know where you live allows us to contact you when something is happening near you</p>
-        <p class="md-caption">Address</p>
-        <div>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>street (example: "1234 Main Street")</label>
-                <input ng-model="uCtrl.user.Street" />
-            </md-input-container>
-        </div>
-        <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>city</label>
-                <input ng-model="uCtrl.user.City" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>state/province</label>
-                <input ng-model="uCtrl.user.StateProvince" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>postal code</label>
-                <input ng-model="uCtrl.user.PostalCode" />
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>country/region</label>
-                <input ng-model="uCtrl.user.CountryRegion" />
-            </md-input-container>
-        </div>
-
-        <button ng-click="uCtrl.saveUserInfo()">
+        <md-button class="md-raised" ng-click="uCtrl.saveUserInfo()">
             save
-        </button>
+        </md-button>
     </div>
 </md-content>
