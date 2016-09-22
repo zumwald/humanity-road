@@ -47,12 +47,7 @@ angular.module('frontEndApp')
       self.languages = ['English', 'Spanish', 'French'];
 
       self.transformChip = function (chip) {
-          // If it is an object, it's already a known chip
-          if (angular.isObject(chip)) {
-              return chip;
-          }
-          // Otherwise, create a new one
-          return { name: chip, type: 'new' }
+          return chip;
       };
 
       function createFilterFor(query) {
