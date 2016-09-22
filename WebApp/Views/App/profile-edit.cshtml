@@ -150,13 +150,13 @@
                       md-transform-chip="uCtrl.transformChip($chip)">
                 <md-autocomplete md-search-text="uCtrl.languageSearchText"
                                  md-items="item in uCtrl.querylanguageSearch(uCtrl.languageSearchText)"
-                                 md-item-text="item.name"
+                                 md-item-text="item"
                                  placeholder="search for a language">
                     <span md-highlight-text="ctrl.languageSearchText">{{item}}</span>
                 </md-autocomplete>
                 <md-chip-template>
                     <span>
-                        {{$chip.name}}
+                        {{$chip}}
                     </span>
                 </md-chip-template>
             </md-chips>
