@@ -13,18 +13,24 @@
     <p class="md-headline">
         Tell us about yourself!
     </p>
-    <div>
+    <form name="userProfile">
         <p class="md-subhead">Let's start with the basics</p>
 
         <p class="md-caption">Name</p>
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
                 <label>First Name</label>
-                <input ng-model="uCtrl.user.Name_First" />
+                <input ng-model="uCtrl.user.Name_First" name="firstName" required />
+                <div ng-messages="userProfile.firstName.$error">
+                    <div ng-message="required">First name is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Last Name</label>
-                <input ng-model="uCtrl.user.Name_Last" />
+                <input ng-model="uCtrl.user.Name_Last" name="lastName" required />
+                <div ng-messages="userProfile.lastName.$error">
+                    <div ng-message="required">Last name is required.</div>
+                </div>
             </md-input-container>
         </div>
 
@@ -52,11 +58,17 @@
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Primary Email</label>
-                <input ng-model="uCtrl.user.Email_Contact" type="email" />
+                <input ng-model="uCtrl.user.Email_Contact" type="email" name="email" required/>
+                <div ng-messages="userProfile.email.$error">
+                    <div ng-message="required">Email is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Skype ID</label>
-                <input ng-model="uCtrl.user.SkypeId" />
+                <input ng-model="uCtrl.user.SkypeId" name="skypeId" required/>
+                <div ng-messages="userProfile.skypeId.$error">
+                    <div ng-message="required">Skype ID is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Twitter ID</label>
@@ -66,7 +78,10 @@
         <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Primary Phone</label>
-                <input ng-model="uCtrl.user.PhoneNumber_Primary" type="tel" />
+                <input ng-model="uCtrl.user.PhoneNumber_Primary" type="tel" name="phoneNumber" required/>
+                <div ng-messages="userProfile.phoneNumber.$error">
+                    <div ng-message="required">Phone number is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Mobile Phone</label>
@@ -85,26 +100,38 @@
         <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-xs>
                 <label>City</label>
-                <input ng-model="uCtrl.user.City"/>
+                <input ng-model="uCtrl.user.City" name="city" required/>
+                <div ng-messages="userProfile.city.$error">
+                    <div ng-message="required">City is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>State</label>
-                <input ng-model="uCtrl.user.StateProvince"/>
+                <input ng-model="uCtrl.user.StateProvince" name="stateProvince" required/>
+                <div ng-messages="userProfile.stateProvince.$error">
+                    <div ng-message="required">State/province is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Zip Code</label>
-                <input ng-model="uCtrl.user.PostalCode"/>
+                <input ng-model="uCtrl.user.PostalCode" />
             </md-input-container>
         </div>
         <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Country</label>
-                <input ng-model="uCtrl.user.CountryRegion" />
+                <input ng-model="uCtrl.user.CountryRegion" name="countryRegion" required/>
+                <div ng-messages="userProfile.countryRegion.$error">
+                    <div ng-message="required">Country/region of residence is required.</div>
+                </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-xs>
                 <label>Country of Citizenship</label>
-                <input ng-model="uCtrl.user.CountryRegionOfCitizenship" />
+                <input ng-model="uCtrl.user.CountryRegionOfCitizenship" name="countryRegionOfCitizenship" required />
                 <div class="hint">Occasionally, we have requests for project work that requires citizenship for that country.</div>
+                <div ng-messages="userProfile.countryRegionOfCitizenship.$error">
+                    <div ng-message="required">Country/region of citizenship is required.</div>
+                </div>
             </md-input-container>
         </div>
 
@@ -135,8 +162,17 @@
             </md-chips>
         </div>
 
-        <md-button class="md-raised" ng-click="uCtrl.saveUserInfo()">
+        <br/>
+        <br/>
+        <p><strong>Code of Conduct Comments:</strong> Code of Conduct Humanity Road, Inc. is committed to encouraging a working environment that promotes humanitarian action and a work ethic free from harassment and discrimination. Activities that discriminate based upon an individual’s sex, race, ethnicity, national origin, age, religion or any other legally protected characteristics are prohibited. All volunteers and staff are required to abide by this policy. Safety: I will place the highest priority on the safety of the general public and my fellow Humanity Road, Inc. staff. Lawfulness: I will comply with all federal, state, local, and international laws and regulations as well as United Nations Humanitarian principles listed below and Humanity Road corporate policies. Professionalism: I will act in a professional manner when representing Humanity Road, Inc. Responsibility: I will act responsibly and quickly in identifying, confirming, and communicating disaster recovery information in a helpful manner so as to educate the general public and those directly affected by a catastrophic disaster. Good fellowship: I will not engage in any activity or communications that creates a conflict or appears to create a conflict with the interests of Humanity Road and with any organization in which I have a personal, business, or financial interest. Loyalty: I will notify leadership for Humanity Road, Inc. immediately should I become aware of any conflict of interest. Integrity: Responding to disasters sometimes requires working with sensitive information. I will maintain the confidentiality of all internal communications and information intended solely for Humanity Road staff. United Nations Humanitarian Principles Humanitarian Principles represent the foundation of humanitarian action. Key humanitarian principles include: Humanity:Human suffering must be addressed wherever it is found. The purpose of humanitarian action is to protect life and health and ensure respect for human beings. Neutrality:Humanitarian actors must not take sides in hostilities or engage in controversies of a political, racial, religious or ideological nature. Impartiality:Humanitarian action must be carried out on the basis of need alone, giving priority to the most urgent cases of distress and making no distinctions on the basis of nationality, race, gender, religious belief, class or political opinion.</p>
+        <md-input-container class="md-block" flex-gt-xs>
+            <md-checkbox ng-model="uCtrl.user.acceptConductTerms" name="acceptedConductTerms" required>
+                Accept
+            </md-checkbox>
+        </md-input-container>
+
+        <md-button class="md-raised" ng-click="uCtrl.saveUserInfo()" ng-disabled="!uCtrl.user.acceptConductTerms" >
             save
         </md-button>
-    </div>
+    </form>
 </md-content>
