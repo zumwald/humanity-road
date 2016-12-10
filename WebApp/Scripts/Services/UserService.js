@@ -69,10 +69,9 @@ angular.module('frontEndApp')
             var deferred = $q.defer();
 
             $http.get(timesheetEndpoint)
-                .success(function (data) {
+                .then(function (data) {
                     deferred.resolve(data);
-                })
-                .error(function (msg, code) {
+                }, function (msg, code) {
                     deferred.reject(msg);
                     $log.error('error in UserService.getTimesheets: ', msg, code);
                 });
