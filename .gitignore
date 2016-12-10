@@ -1,5 +1,3 @@
-.nuget
-.ts_npm_cache
 .vs
 packages
 *.user
