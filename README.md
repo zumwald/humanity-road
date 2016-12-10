@@ -19,3 +19,7 @@ A web dashboard designed to allow volunteers at [HumanityRoad](http://humanityro
 
  - Authentication & user roles via OWIN ([see here for help on ASP.NET auth](http://oauthforaspnet.com/))
  - EntityFramework data store for saving volunteer data
+ 
+####CI/CD via VisualStudio.com
+  - [CI build is defined here](https://humanityroadinc.visualstudio.com/MyFirstProject/_build/index?definitionId=2&_a=completed)
+  - web app is hosted at https://humanityroadvolunteerdashboard.azurewebsites.net
