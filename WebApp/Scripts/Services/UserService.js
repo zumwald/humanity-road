@@ -70,7 +70,7 @@ angular.module('frontEndApp')
 
             $http.get(timesheetEndpoint)
                 .then(function (data) {
-                    deferred.resolve(data);
+                    deferred.resolve(data.data || []);
                 }, function (msg, code) {
                     deferred.reject(msg);
                     $log.error('error in UserService.getTimesheets: ', msg, code);
