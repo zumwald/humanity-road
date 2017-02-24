@@ -1,17 +1,17 @@
-﻿using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
-using System.Security.Claims;
-using System.Web.Http;
-using System.Web.Http.Description;
-using System.Web.Mvc;
-using WebApp.DAL;
-using WebApp.Utilities;
-
-namespace WebApp.Controllers
+﻿namespace WebApp.Controllers
 {
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Net;
+    using System.Security.Claims;
+    using System.Web.Http;
+    using System.Web.Http.Description;
+    using System.Web.Mvc;
+    using DAL;
+    using Utilities;
+
     [RequireHttps(Order = 0)]
     [System.Web.Mvc.Authorize(Order = 1)]
     public class VolunteerController : ApiController

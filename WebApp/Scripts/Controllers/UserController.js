@@ -8,9 +8,16 @@
  * Controller of the frontEndApp
  */
 angular.module('frontEndApp')
-  .controller('UserCtrl', ['$log', 'UserService', '$window', '$mdSidenav', function ($log, UserService, $window, $mdSidenav) {
+  .controller('UserCtrl', ['$log', 'UserService', '$window', '$mdSidenav', '$location', '$cookies', function ($log, UserService, $window, $mdSidenav, $location, $cookies) {
 
       $log.log('entered UserCtrl');
+
+      var desiredRoute = $cookies.get('clientStartRoute');
+      if (desiredRoute) {
+          if (desiredRoute !== $location.url()) {
+              $location.url(desiredRoute);
+          }
+      }
 
       var self = this;
       self.user = {};
