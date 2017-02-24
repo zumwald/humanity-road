@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Security.Claims;
-using System.Web.Http;
-using System.Web.Http.Description;
-using WebApp;
-using WebApp.DAL;
-using WebApp.Utilities;
-
-namespace WebApp.Controllers
+﻿namespace WebApp.Controllers
 {
+    using System;
+    using System.Data;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Web.Http;
+    using System.Web.Http.Description;
+    using WebApp;
+    using DAL;
+    using Utilities;
+
     public class TimeSheetController : ApiController
     {
         private DataContext db = new DataContext();

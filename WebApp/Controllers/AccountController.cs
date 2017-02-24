@@ -1,10 +1,10 @@
-﻿using System.Security.Claims;
-using System.Web.Http;
-using System.Web.Mvc;
-using WebApp.Utilities;
-
-namespace WebApp.Controllers
+﻿namespace WebApp.Controllers
 {
+    using System.Security.Claims;
+    using System.Web.Http;
+    using System.Web.Mvc;
+    using WebApp.Utilities;
+
     [RequireHttps(Order = 0)]
     [System.Web.Mvc.Authorize(Order = 1)]
     public class AccountController : ApiController

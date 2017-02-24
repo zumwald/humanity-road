@@ -5,16 +5,18 @@
 
 <md-content layout-padding flex layout="column">
 
-    <div layout="row">
+    <div flex="nogrow" layout="row">
         <h4 class="md-display-6">Log your recent activity</h4>
         <span flex></span>
         <md-button class="md-raised md-primary" ng-click="uCtrl.saveTimesheet()">save</md-button>
     </div>
 
-    <div layout-gt-xs="row" layout="column">
-        <md-datepicker class="md-block"
-                       ng-model="uCtrl.timesheet.Date"
-                       md-placeholder="Select the date"></md-datepicker>
+    <div flex="nogrow" layout-gt-xs="row" layout="column" layout-align="space-around start">
+        <md-input-container flex="none">
+            <md-datepicker class="md-block"
+                           ng-model="uCtrl.timesheet.Date"
+                           md-placeholder="Select the date"></md-datepicker>
+        </md-input-container>
         <md-input-container class="md-block" flex-gt-xs="10">
             <label>hours</label>
             <input ng-model="uCtrl.timesheet.Hours" type="number"/>
@@ -25,25 +27,25 @@
         </md-input-container>
     </div>
 
-    <md-list>
-        <md-subheader class="md-no-sticky">Timesheet History</md-subheader>
-        <md-list-item ng-repeat="timesheet in uCtrl.timesheetList">
-            <md-input-container class="md-block" flex-gt-xs="nogrow">
-                <label>Date</label>
-                <input ng-model="timesheet.Date" disabled>
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs="nogrow">
-                <label>Hours</label>
-                <input ng-model="timesheet.Hours" disabled>
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-xs>
-                <label>Description</label>
-                <input ng-model="timesheet.Description" disabled>
-            </md-input-container>
-            <md-button disabled><i class="fa fa-pencil"></i></md-button>
-            <md-button disabled><i class="fa fa-trash"></i></md-button>
-        </md-list-item>
+    <md-list flex="nogrow" layout="column">
+        <md-title flex="none" class="md-no-sticky">Timesheet History</md-title>
+        <md-content>
+            <md-list-item flex="nogrow" ng-repeat="timesheet in uCtrl.timesheetList" layout-gt-xs="row" layout="column">
+                <md-input-container class="md-block" flex-gt-xs="nogrow">
+                    <label>Date</label>
+                    <input ng-model="timesheet.Date" disabled>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs="nogrow">
+                    <label>Hours</label>
+                    <input ng-model="timesheet.Hours" disabled>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Description</label>
+                    <input ng-model="timesheet.Description" disabled>
+                </md-input-container>
+                <md-button disabled><i class="fa fa-pencil"></i></md-button>
+                <md-button disabled><i class="fa fa-trash"></i></md-button>
+            </md-list-item>
+        </md-content>
     </md-list>
-
-    <span flex></span>
 </md-content>

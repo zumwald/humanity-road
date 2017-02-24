@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace WebApp.Controllers
+﻿namespace WebApp.Controllers
 {
+    using System.Web.Mvc;
+
     [Authorize]
     public class ErrorController : Controller
     {
